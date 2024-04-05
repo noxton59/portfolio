@@ -1,0 +1,109 @@
+.nav-bar-menu {
+  display: flex;
+  flex-direction: row;
+  column-gap: 30px;
+  background: linear-gradient(180deg, rgba(0,146,185,1) 0%, rgba(0,104,136,1) 100%);
+  padding: 10px 50px;
+  position: sticky;
+  top: 0px;
+}
+.nav-menu-link {
+  padding: 5px 25px;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.nav-menu-link:hover {
+  outline: 2px solid white;
+  border-radius: 10px;
+}
+.nav-menu-link:active {
+  color: rgb(0, 191, 255);
+  outline-color: rgb(0, 191, 255);
+}
+.toggled-menu {
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+}
+.toggled-menu:hover {
+  background-color: rgba(0, 200, 255, 0.3);
+}
+.toggled-menu:active {
+  border-color: rgb(0, 191, 255);
+}
+.toggled-menu-icon {
+  font-size: 30px;
+  color: white;
+}
+.toggled-menu-icon:active {
+  color: rgb(0, 191, 255);
+}
+.opened-menu {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(1, 75, 154);
+  padding: 10px;
+  border-radius: 10px;
+  animation: toggle 0.2s linear;
+  transform-origin: 0 0;
+}
+.opened-menu-link {
+  text-decoration: none;
+  padding: 5px 50px 5px 5px;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  border-radius: 5px;
+  margin: 3px;
+  cursor: pointer;
+}
+.opened-menu-link:hover {
+  outline: 2px solid white;
+}
+.opened-menu-link:active {
+  outline-color: rgb(0, 191, 255);
+  color: rgb(0, 191, 255);
+} 
+.hide-menu {
+  animation: toggleBack 0.25s linear;
+  transform-origin: 0 0;
+}
+@keyframes toggle {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes toggleBack {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(0);
+  }
+}
+@media (max-width: 991.99px) {
+  .nav-bar-menu {
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+    background: linear-gradient(180deg, rgba(0,146,185,1) 0%, rgba(0,104,136,1) 100%);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0px;
+  }
+}
