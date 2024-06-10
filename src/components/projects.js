@@ -9,11 +9,14 @@ function Projects({width}) {
   const [carousel1, setCarousel1] = useState(false);
   const [carousel2, setCarousel2] = useState(false);
   const [carousel3, setCarousel3] = useState(false);
+  const [carousel4, setCarousel4] = useState(false);
   const [length, setLength] = useState(3);
   const [linkSite2, setLinkSite2] = useState(false);
   const [linkSite3, setLinkSite3] = useState(false);
+  const [linkSite4, setLinkSite4] = useState(false);
   const note1 = useRef(null);
-  const note2 = useRef(null)
+  const note2 = useRef(null);
+  const note3 = useRef(null);
 
   function showCarousel1() {
     setLength(3);
@@ -33,10 +36,17 @@ function Projects({width}) {
     showSlides(index, ".slide-3", ".rectangle-3");
   }
 
+  function showCarousel4() {
+    setLength(4);
+    setCarousel4(true);
+    showSlides(index, ".slide-4", ".rectangle-4");
+  }
+
   function closeCarousel() {
     setCarousel1(false);
     setCarousel2(false);
     setCarousel3(false);
+    setCarousel4(false);
     setIndex(0);
   }
 
@@ -56,16 +66,28 @@ function Projects({width}) {
       setTimeout(()=>{
         document.querySelector(".note-wrapper-3").classList.remove("fade-back");
         setLinkSite3(false);
-      }, 400)
+      }, 400);
+    }
+  }
+
+  function clickOutSide3(e) {
+    if (linkSite4 && note3.current && !note3.current.contains(e.target)) {
+      document.querySelector(".note-wrapper-4").classList.add("fade-back");
+      setTimeout(()=>{
+        document.querySelector(".note-wrapper-4").classList.remove("fade-back");
+        setLinkSite4(false);
+      }, 400);
     }
   }
 
   useEffect(()=>{
     window.addEventListener("click", clickOutSide1);
     window.addEventListener("click", clickOutSide2);
+    window.addEventListener("click", clickOutSide3);
     return () => {
       window.removeEventListener("click", clickOutSide1);
       window.removeEventListener("click", clickOutSide2);
+      window.removeEventListener("click", clickOutSide3);
     }
   })
 
@@ -114,8 +136,12 @@ function Projects({width}) {
     setLinkSite3(true);
   }
 
+  function goToSite4() {
+    setLinkSite4(true);
+  }
+
   let renderProjects;
-  if (width >= 992) {
+  if (width >= 1400) {
     renderProjects = 
       <div className="projects-wrapper">
         <div id="projects"></div>
@@ -138,16 +164,23 @@ function Projects({width}) {
             </div>
             <div className="site-description">3. HTML, CSS, JS, React.</div>
           </div>
+          <div className="project-4" onClick={showCarousel4}>
+            <div>
+              <img src={"./images/site4.1.jpg"} alt="site-4" className="site-image"></img>
+            </div>
+            <div className="site-description">4. HTML, CSS, JS, Bootstrap</div>
+          </div>
         </div>
         <div className="col-8 align-self-center site-description-main">
           <ol>
             <li>The static site was created for informational purposes using Bootstrap.</li>
             <li>The site was created with embedded NeDB to track sports training with the ability to create new accounts and edit information if errors were made.</li>
             <li>The site was created with embedded NeDB to track daily lifestyle habits such as sleep, meals, steps, physical activity and stress. It shows recommendations based on your lifestyle. The site supports creating an account and changing daily activity information. </li>
+            <li>Computer store site with built-in NeDB for creating an account, adding items to cart, and changing user personal information.</li>
           </ol>
         </div>
       </div>
-  } else if (width < 992) {
+  } else if (width < 1400) {
     renderProjects = 
       <div className="projects-wrapper">
         <div id="projects"></div>
@@ -169,6 +202,12 @@ function Projects({width}) {
               <img src={"./images/site3.1.jpg"} alt="site-3" className="site-image"></img>
             </div>
             <div className="site-description">3. HTML, CSS, JS, React. The site is designed to track daily lifestyle habits such as sleep, meals, steps, physical activity and stress. It shows recommendations based on your lifestyle. The site supports creating an account and changing daily activity information.</div>
+          </div>
+          <div className="project-4" onClick={showCarousel4}>
+            <div>
+              <img src={"./images/site4.1.jpg"} alt="site-4" className="site-image"></img>
+            </div>
+            <div className="site-description">4. HTML, CSS, JS, Bootstrap. Computer store site with built-in NeDB for creating an account, adding items to cart, and changing user personal information.</div>
           </div>
         </div>
       </div>
@@ -266,6 +305,38 @@ function Projects({width}) {
           <div className={`note-wrapper-3 ${linkSite3 === true ? "" : "hidden"}`}>
             <div><span className="important-note">Important note!</span> The site is hosted on the free Render service, they put to sleep inactive applications, so the site may take up to 1 minute to load for the first time, be patient please. And, site saves entered data only when it's active and haven't putted to sleep yet because of free service, in long run with proper hosting service site will preserve data forever.</div>
             <a href="https://healthcare-app-h4k0.onrender.com/" target="_blank" className="link-to-website">Go to site</a>
+          </div>
+        </div>
+        <button className="close-carousel-btn" onClick={closeCarousel}><IoClose className="close-icon"/></button>
+      </div>
+      <div className={`slideshow-container ${carousel4 === true ? "" : "hidden"}`}>
+        <div className="carousel-4">
+          <div className="slide-4">
+            <img src={'./images/site4.1.jpg'} className="slide-image-1"></img>
+          </div>
+          <div className="slide-4">
+            <img src={'./images/site4.2.jpg'} className="slide-image-1"></img>
+          </div>
+          <div className="slide-4">
+            <img src={'./images/site4.3.jpg'} className="slide-image-1"></img>
+          </div>
+          <div className="slide-4">
+            <img src={'./images/site4.4.jpg'} className="slide-image-1"></img>
+          </div>
+          <a className="prev" onClick={()=>{handlePrev(".slide-4", ".rectangle-4")}}><FaArrowAltCircleLeft className="change-slide-icon"/></a>
+          <a className="next" onClick={()=>{handleNext(".slide-4", ".rectangle-4")}}><FaArrowAltCircleRight className="change-slide-icon"/></a>
+        </div>
+        <div className="rectangle-wrapper">
+          <div className="rectangle-4"></div>
+          <div className="rectangle-4"></div>
+          <div className="rectangle-4"></div>
+          <div className="rectangle-4"></div>
+        </div>
+        <div className="link-wrapper-4" ref={note3}>
+          <button className="link-to-website" onClick={goToSite4}>Go to website</button>
+          <div className={`note-wrapper-4 ${linkSite4 === true ? "" : "hidden"}`}>
+            <div><span className="important-note">Important note!</span> The site is hosted on the free Glitch service, they put to sleep inactive applications, so the site may take up to 1 minute to load for the first time, be patient please.</div>
+            <a href="https://some-shop.glitch.me/" target="_blank" className="link-to-website">Go to site</a>
           </div>
         </div>
         <button className="close-carousel-btn" onClick={closeCarousel}><IoClose className="close-icon"/></button>

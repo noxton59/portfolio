@@ -37,13 +37,18 @@
 .projects-arrow:hover {
   color: rgb(0, 191, 255);
 }
+@media (max-height: 700px) {
+  .intro-main {
+    height: auto;
+  }
+}
 @media (min-width: 1600px) {
   .description {
     font-size: 35px;
     color: white;
   }
   .photo-image {
-    height: 700px;
+    height: 600px;
     border-radius: 30px;
   }
 }

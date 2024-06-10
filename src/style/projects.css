@@ -16,13 +16,13 @@
   align-items: flex-start;
   justify-content: space-around;
 }
-.project-1, .project-2, .project-3 {
+.project-1, .project-2, .project-3, .project-4 {
   width: 30%;
   cursor: pointer;
   padding: 20px;
   border-radius: 20px;
 }
-.project-1:hover, .project-2:hover, .project-3:hover {
+.project-1:hover, .project-2:hover, .project-3:hover, .project-4:hover {
   background-color: rgb(0, 169, 79);
 }
 .site-image {
@@ -51,10 +51,10 @@
   background-color: rgba(0,0,0,0.7);
   z-index: 3;
 }
-.slide-1, .slide-2, .slide-3 {
+.slide-1, .slide-2, .slide-3, .slide-4 {
   display: none;
 }
-.slide-1.active, .slide-2.active, .slide-3.active {
+.slide-1.active, .slide-2.active, .slide-3.active, .slide-4.active {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +64,7 @@
   width: 70%;
   height: 500px;
 }
-.carousel-1, .carousel-2, .carousel-3 {
+.carousel-1, .carousel-2, .carousel-3, .carousel-4 {
   position: relative;
   width: 70%;
 }
@@ -87,9 +87,6 @@
   width: 50px;
   height: 50px;
 }
-.rectangle-1.active, .rectangle-2.active, .rectangle-3.active {
-  background-color: rgb(31, 123, 251);
-}
 .prev:hover, .next:hover {
   color: rgb(57, 174, 252);
 }
@@ -98,13 +95,16 @@
   column-gap: 15px;
   margin-top: 20px;
 }
-.rectangle-1, .rectangle-2, .rectangle-3 {
+.rectangle-1, .rectangle-2, .rectangle-3, .rectangle-4 {
   width: 25px;
   height: 7px;
   border-radius: 2px;
   background-color: white;
   cursor: pointer;
   display: inline-block;
+}
+.rectangle-1.active, .rectangle-2.active, .rectangle-3.active, .rectangle-4.active {
+  background-color: rgb(31, 123, 251);
 }
 .link-to-website {
   margin-top: 20px;
@@ -148,14 +148,14 @@
   font-size: 50px;
   color: white;
 }
-.link-wrapper-2, .link-wrapper-3 {
+.link-wrapper-2, .link-wrapper-3, .link-wrapper-4 {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-.note-wrapper-2, .note-wrapper-3 {
+.note-wrapper-2, .note-wrapper-3, .note-wrapper-4 {
   text-align: center;
   display: flex;
   align-items: center;
@@ -189,6 +189,12 @@
   0% {opacity: 1;}
   100% {opacity: 0;}
 }
+
+@media (max-height: 1200px) {
+  .projects-main {
+    height: auto;
+  }
+}
 @media (min-width: 1600px) {
   .site-description {
     font-size: 35px;
@@ -196,6 +202,21 @@
   .site-description-main {
     color: white;
     font-size: 35px;
+  }
+}
+@media (max-width: 1399.99px) {
+  .projects-main {
+    height: auto;
+  }
+  .projects-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .project-1, .project-2, .project-3, .project-4 {
+    width: 100%;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 20px;
   }
 }
 @media(max-width: 991.99px) {
@@ -208,17 +229,17 @@
     align-items: center;
     justify-content: space-around;
   }
-  .project-1, .project-2, .project-3 {
+  .project-1, .project-2, .project-3, .project-4 {
     width: 80%;
   }
-  .carousel-1, .carousel-2, .carousel-3 {
+  .carousel-1, .carousel-2, .carousel-3, .carousel-4 {
     width: 80%;
   }
   .slide-image-1 {
     width: 100%;
     height: 100%;
   }
-  .note-wrapper-2, .note-wrapper-3 {
+  .note-wrapper-2, .note-wrapper-3, .note-wrapper-4 {
     text-align: center;
     display: flex;
     align-items: center;
@@ -237,10 +258,10 @@
   }
 }
 @media (max-width: 500px) {
-  .project-1, .project-2, .project-3 {
+  .project-1, .project-2, .project-3, .project-4 {
     width: 100%;
   }
-  .carousel-1, .carousel-2, .carousel-3 {
+  .carousel-1, .carousel-2, .carousel-3, .project-4 {
     width: 100%;
   }
 }
