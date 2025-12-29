@@ -259,7 +259,7 @@ function Projects({width}) {
         <div className="link-wrapper-2" ref={note1}>
           <button className="link-to-website" onClick={goToSite2}>Go to website</button>
           <div className={`note-wrapper-2 ${linkSite2 === true ? "" : "hidden"}`}>
-            <div><span className="important-note">Important note!</span> The site is hosted on the free Glitch service, they put to sleep inactive applications, so the site may take up to 1 minute to load for the first time, be patient please.</div>
+            <div><span className="important-note">Important note!</span> The site is hosted on the free Render service, they put to sleep inactive applications, so the site may take up to 1 minute to load for the first time, be patient please.</div>
             <a href="https://tracksportroutine.glitch.me/" target="_blank" className="link-to-website">Go to site</a>
           </div>
         </div>
@@ -335,8 +335,8 @@ function Projects({width}) {
         <div className="link-wrapper-4" ref={note3}>
           <button className="link-to-website" onClick={goToSite4}>Go to website</button>
           <div className={`note-wrapper-4 ${linkSite4 === true ? "" : "hidden"}`}>
-            <div><span className="important-note">Important note!</span> The site is hosted on the free Glitch service, they put to sleep inactive applications, so the site may take up to 1 minute to load for the first time, be patient please.</div>
-            <a href="https://some-shop.glitch.me/" target="_blank" className="link-to-website">Go to site</a>
+            <div><span className="important-note">Important note!</span> The site is hosted on the free Render service, they put to sleep inactive applications, so the site may take up to 1 minute to load for the first time, be patient please.</div>
+            <a href="https://someshop.onrender.com/" target="_blank" className="link-to-website">Go to site</a>
           </div>
         </div>
         <button className="close-carousel-btn" onClick={closeCarousel}><IoClose className="close-icon"/></button>
