@@ -12,7 +12,7 @@ function Intro({width}) {
           <Row>
             <Col className="description" lg={8}>
               <Row>
-                Hello, my name is Anton Zhdanov, I graduated from the Perm State Agricultural Technical University with a bachelor degree in mechanical engineering, worked for 4.5 years as a technical expert in car re-equipment and decided to change my field of activity. I started studying HTML, CSS, JavaScript, React, Bootstrap and after one year of studying these are my projects:
+                Hello, my name is Anton Zhdanov, I graduated from the Perm State Agricultural Technical University with a bachelor degree in mechanical engineering, but I decided to change my field of activity. Now I am working as system administrator and started studying HTML, CSS, JavaScript, React, Bootstrap and these are my projects:
               </Row>
               <Row className="projects-link-wrapper">
                 <a href="#projects" className="projects-arrow"><PiArrowFatLinesDownBold className="project-icon"/></a>
@@ -31,7 +31,7 @@ function Intro({width}) {
         <div id="intro"></div>
         <Container>
           <Row className="description">
-            Hello, my name is Anton Zhdanov, I graduated from the Perm State Agricultural Technical University with a bachelor degree in mechanical engineering, worked for 4.5 years as a technical expert in car re-equipment and decided to change my field of activity. I started studying HTML, CSS, JavaScript, React, Bootstrap and after one year of studying these are my projects:
+            Hello, my name is Anton Zhdanov, I graduated from the Perm State Agricultural Technical University with a bachelor degree in mechanical engineering, but I decided to change my field of activity. Now I am working as system administrator and started studying HTML, CSS, JavaScript, React, Bootstrap and these are my projects:
           </Row>
           <Col className="photo-wrapper mt-5">
             <img src={"/photo.jpg"} alt="profile" className="photo-image"></img>
